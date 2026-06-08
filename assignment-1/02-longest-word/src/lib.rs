@@ -1,6 +1,7 @@
 pub fn longest_word(sentence: &str) -> Option<&str> {
-    let _ = sentence;
+    let s = sentence;
     todo!("implement longest_word")
+    
 }
 
 #[cfg(test)]

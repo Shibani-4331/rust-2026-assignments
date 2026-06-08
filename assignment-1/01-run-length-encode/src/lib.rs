@@ -1,6 +1,21 @@
 pub fn run_length_encode(input: &str) -> Vec<(char, u32)> {
-    let _ = input;
-    todo!("implement run_length_encode")
+    let s = input;
+    let mut result = Vec::new();
+    let mut chars = s.chars();
+    if let Some(mut curr_char) = chars.next(){
+        let mut count = 1;
+        for c in chars {
+            if c == curr_char {
+                count += 1;
+            } else {
+                result.push((curr_char, count));
+                curr_char = c;
+                count = 1;
+            }
+        }
+        result.push((curr_char, count));
+    }
+    result
 }
 
 #[cfg(test)]
