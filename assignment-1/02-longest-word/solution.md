@@ -2,11 +2,13 @@
 
 ## Approach
 
-_Describe your approach here._
+Split the sentence into whitespace-separated words, then iterate through them while tracking the longest word seen so far. Return a borrowed slice to the longest word, or None if no words are present.
 
 ## Edge cases handled
 
+-Empty space and whitespaces only, return None
+-if more than one word exist with same length then the first one is returned
 
 ## Anything special
 
-_Tricks, alternatives you considered, performance notes, etc._
+No String allocation occured
