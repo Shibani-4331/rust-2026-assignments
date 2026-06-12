@@ -1,6 +1,14 @@
 pub fn reverse_words(sentence: &str) -> String {
-    let _ = sentence;
-    todo!("implement reverse_words")
+    let s = sentence;
+    let mut str:String = String::new();
+    for x in s.split_whitespace().rev(){
+        if !str.is_empty(){
+            str.push(' ');
+        }
+        str.push_str(x);
+    }
+    str
+
 }
 
 #[cfg(test)]
