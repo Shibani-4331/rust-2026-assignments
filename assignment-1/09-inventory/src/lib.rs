@@ -1,14 +1,27 @@
+use std::collections::HashMap;
 pub fn restock(
     inventory: Vec<(String, u32)>,
     more: Vec<(String, u32)>,
 ) -> Vec<(String, u32)> {
-    let _ = (inventory, more);
-    todo!("implement restock")
+    let mut map = HashMap::new();
+
+    for (name, qty) in inventory {
+        *map.entry(name).or_insert(0) += qty;
+    }
+    for (name, qty) in more {
+        *map.entry(name).or_insert(0) += qty;
+    }
+    map.into_iter().collect()
 }
 
 pub fn summary(inventory: &[(String, u32)]) -> String {
-    let _ = inventory;
-    todo!("implement summary")
+    let mut total_units = 0;
+
+    for item in inventory {
+        total_units += item.1;
+    }
+
+    format!("{} items, {} units", inventory.len(), total_units)
 }
 
 #[cfg(test)]
