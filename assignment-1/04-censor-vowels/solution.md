@@ -2,11 +2,15 @@
 
 ## Approach
 
-_Describe your approach here._
+Iterate through the string's characters using chars(). 
+For each character, replace it with '*' if it is an ASCII vowel . 
+Collect the transformed characters into a new String and assign it back to the original mutable string.
 
 ## Edge cases handled
-
+Empty strings remain unchanged.
+Strings without vowels are left unchanged.
+Both uppercase and lowercase vowels are censored.
 
 ## Anything special
 
-_Tricks, alternatives you considered, performance notes, etc._
+This solution uses a safe approach with chars(), map(), and collect() instead of mutating the string's bytes directly.
